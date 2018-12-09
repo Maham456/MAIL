@@ -1,0 +1,54 @@
+﻿@model WebApplication3.Models.gmail
+
+@{
+    ViewBag.Title = "Index1";
+}
+
+
+
+<!DOCTYPE html>
+
+
+<body>
+    <div>
+        @using (Html.BeginForm("Index1", "EmailSetup", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <centre>
+                <h1>How to Configure SMTP of gmail</h1>
+                <h2>nome</h2>
+                <hr />
+                <table>
+
+                    <tr>
+                        <td>
+                            Subject:
+                        </td>
+                        <td>@Html.TextBoxFor(model => model.Body)</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">
+                            Body:
+                        </td>
+                        <td>@Html.DisplayNameFor(model => model.Body)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" onclick="myFunction()" value="Send" />
+                        </td>
+
+                    </tr>
+                </table>
+                <br />
+
+            </centre>
+        }
+    </div>
+    <script>
+    function myFunction() {
+    alert("Your mail has been sent successfully.Thank you");
+    }
+    </script>
+</body>
+
+
+
